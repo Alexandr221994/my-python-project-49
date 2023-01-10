@@ -10,10 +10,11 @@ GAMES = {
 }
 
 
-def args_parser():
+def args_parser(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("-gn", "--gamename",
                         help="by adding a certain argument (calc, even, gcd, "
                              "progression, prime) you get a selected game")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     return GAMES[args.gamename]
+
